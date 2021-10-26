@@ -1,4 +1,4 @@
-### Singleton Desing Pattern
+# Singleton Desing Pattern
 
 # Problem 
 Single instance (or object) should be created and that single object can be used by all other classes.
