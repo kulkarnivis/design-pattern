@@ -1,9 +1,9 @@
-# Singleton Desing Pattern
+### Singleton Desing Pattern
 
-### Problem 
+## Problem 
 -------------
 Single instance (or object) should be created and that single object can be used by all other classes.
 
-### Solution
+## Solution
 -------------
 Singleton design pattern is the best solution of above specific problem.
