@@ -30,7 +30,7 @@ AbstractFactoryPatternDemo, our demo class uses FactoryProducer to get a Abstrac
 
 ## Implementation using kotlin
 
-[Code implementation](https://github.com/kulkarnivis/design-pattern/tree/main/creational/factory_method/src/main/kotlin)
+[Code implementation](https://github.com/kulkarnivis/design-pattern/tree/main/creational/abstract_factory/src/main/kotlin)
 
 **Create Notification interface**
 
