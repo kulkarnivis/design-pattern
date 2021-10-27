@@ -20,18 +20,18 @@ Design patterns differ by their complexity, level of detail and scale of applica
 Purpose       | Design Pattern    | Aspect(s) that can vary
 ------------- | -------------     | ---------------------------------
 Creational    |                   | provide object creation mechanisms that increase flexibility and reuse of existing code.
-    | Factory Method    | provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+Creational    | Factory Method    | provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 Creational    | Abstract Factory  | lets you produce families of related objects without specifying their concrete classes.
 Creational    | Singleton         | lets you ensure that a class has only one instance, while providing a global access point to this instance. 
 Creational    | Builder           | lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
 Creational    | Prototype         | lets you copy existing objects without making your code dependent on their classes.     
-Structural patterns |                   | These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient
+Structural    |                   | These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient
+Adapter       |   | allows objects with incompatible interfaces to collaborate.
+Bridge       |   | lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
+Composite   |   | lets you compose objects into tree structures and then work with these structures as if they were individual objects.
+Decorator   |   | lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+Facade   |   | provides a simplified interface to a library, a framework, or any other complex set of classes.
+Flyweight |   | lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
+Proxy   |   | lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
 
-## Creational patterns
-provide object creation mechanisms that increase flexibility and reuse of existing code.
-
-## Structural patterns 
-explain how to assemble objects and classes into larger structures, while keeping the structures flexible and efficient.
-
-## Behavioral patterns 
-take care of effective communication and the assignment of responsibilities between objects.
+Behavioral    |                   | take care of effective communication and the assignment of responsibilities between objects.
