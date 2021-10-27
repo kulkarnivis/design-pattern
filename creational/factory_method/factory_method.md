@@ -24,7 +24,9 @@ public abstract class Notification {
     public abstract void notifyUser();
 }
 ```
-**Create all implementation classes**
+
+# Create all implementation classes
+
 ```
 SMSNotification.java
 ```
@@ -68,7 +70,7 @@ public class PushNotification implements Notification {
     }
 }
 ```
-**Create a factory class NotificationFactory.java to instantiate concrete class. **
+# Create a factory class NotificationFactory.java to instantiate concrete class.
 
 ```
 public class NotificationFactory {
