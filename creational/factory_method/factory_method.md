@@ -18,3 +18,24 @@ public interface Notification {
     void notifyUser();
 }
 ```
+Note- Above interface could be created as an abstract class as well. 
+```
+public abstract class Notification {
+    public abstract void notifyUser();
+}
+```
+**Create all implementation classes**
+```
+SMSNotification.java
+```
+
+```
+public class SMSNotification implements Notification {
+ 
+    @Override
+    public void notifyUser()
+    {
+        System.out.println("Sending an SMS notification");
+    }
+}
+```
