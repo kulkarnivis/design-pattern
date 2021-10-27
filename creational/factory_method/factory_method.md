@@ -28,7 +28,7 @@ abstract class Notification {
 Create all implementation classes
 
 ```
-SMSNotification.java
+SMSNotification.kt
 ```
 
 ```
@@ -40,7 +40,7 @@ class SMSNotification: Notification {
 ```
 
 ```
-EmailNotification.java
+EmailNotification.kt
 ```
 
 ```
@@ -53,7 +53,7 @@ public class EmailNotification: Notification {
 ```
 
 ```
-PushNotification.java
+PushNotification.kt
 ```
 
 ```
@@ -64,7 +64,7 @@ public class PushNotification: Notification {
     }
 }
 ```
-Create a factory class NotificationFactory.java to instantiate concrete class.
+Create a factory class NotificationFactory.kt to instantiate concrete class.
 
 ```
 class NotificationFactory {
