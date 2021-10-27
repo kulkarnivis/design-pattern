@@ -10,6 +10,9 @@ In Java constructors are not polymorphic, but by allowing subclass to create an 
 ![image](https://user-images.githubusercontent.com/51394570/139050855-5772cdab-b620-4264-9fd7-e90641fff4dc.png)
 
 ## Implementation
-`public interface Notification {
+
+**Create Notification interface**
+
+```public interface Notification {
     void notifyUser();
-}`
+}```
