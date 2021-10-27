@@ -9,19 +9,19 @@ In Java constructors are not polymorphic, but by allowing subclass to create an 
 
 ![image](https://user-images.githubusercontent.com/51394570/139050855-5772cdab-b620-4264-9fd7-e90641fff4dc.png)
 
-## Implementation
+## Implementation using kotlin
 
 **Create Notification interface**
 
 ```
-public interface Notification {
-    void notifyUser();
+interface Notification {
+    fun notifyUser()
 }
 ```
 Note- Above interface could be created as an abstract class as well. 
 ```
-public abstract class Notification {
-    public abstract void notifyUser();
+abstract class Notification {
+    abstract fun notifyUser()
 }
 ```
 
@@ -32,12 +32,9 @@ SMSNotification.java
 ```
 
 ```
-public class SMSNotification implements Notification {
- 
-    @Override
-    public void notifyUser()
-    {
-        System.out.println("Sending an SMS notification");
+class SMSNotification: Notification {
+    override fun notifyUser() {
+        println("Sending an SMS notification")
     }
 }
 ```
@@ -47,11 +44,10 @@ EmailNotification.java
 ```
 
 ```
-public class EmailNotification implements Notification {
-    @Override
-    public void notifyUser()
+public class EmailNotification: Notification {
+    override fun notifyUser()
     {
-        System.out.println("Sending an e-mail notification");
+        println("Sending an e-mail notification");
     }
 }
 ```
@@ -61,47 +57,42 @@ PushNotification.java
 ```
 
 ```
-public class PushNotification implements Notification {
- 
-    @Override
-    public void notifyUser()
+public class PushNotification: Notification {
+    override fun notifyUser()
     {
-        System.out.println("Sending a push notification");
+        println("Sending a push notification");
     }
 }
 ```
 Create a factory class NotificationFactory.java to instantiate concrete class.
 
 ```
-public class NotificationFactory {
-    public Notification createNotification(String channel)
-    {
-        if (channel == null || channel.isEmpty())
-            return null;
-        if ("SMS".equals(channel)) {
-            return new SMSNotification();
+class NotificationFactory {
+    fun createNotification(channel: String?): Notification? {
+            if (channel == null || channel.isEmpty())
+                return null
+
+            return when (channel) {
+                "SMS" -> {
+                    SMSNotification()
+                }
+                "EMAIL" -> {
+                    EmailNotification()
+                }
+                "PUSH" -> {
+                    PushNotification()
+                }
+                else -> null
+            }
         }
-        else if ("EMAIL".equals(channel)) {
-            return new EmailNotification();
-        }
-        else if ("PUSH".equals(channel)) {
-            return new PushNotification();
-        }
-        return null;
-    }
 }
 ```
 
 Now let’s use factory class to create and get an object of concrete class by passing some information. 
 
 ```
-public class NotificationService {
-    public static void main(String[] args)
-    {
-        NotificationFactory notificationFactory = new NotificationFactory();
-        Notification notification = notificationFactory.createNotification("SMS");
-        notification.notifyUser();
-    }
+fun main(){
+    NotificationFactory().createNotification("SMS")?.notifyUser()
 }
 ```
 
