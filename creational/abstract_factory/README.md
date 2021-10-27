@@ -85,7 +85,7 @@ abstract class AbstractFactory {
 }
 ```
 ```
-AbstractFactory.kt
+ShapeFactory.kt
 ```
 ```
 class ShapeFactory: AbstractFactory() {
