@@ -106,5 +106,5 @@ public class NotificationService {
 ```
 
 ```
-**Output : Sending an SMS notification**
+Output : Sending an SMS notification
 ```
