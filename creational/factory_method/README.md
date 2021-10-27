@@ -29,6 +29,12 @@ public interface BeanFactory {
 ```
 https://www.baeldung.com/spring-framework-design-patterns#1-application-context
 
+# Real-time examples 
+This design pattern has been widely used in JDK, such as 
+1. getInstance() method of java.util.Calendar, NumberFormat, and ResourceBundle uses factory method design pattern. 
+2. All the wrapper classes like Integer, Boolean etc, in Java uses this pattern to evaluate the values using valueOf() method. 
+3. java.nio.charset.Charset.forName(), java.sql.DriverManager#getConnection(), java.net.URL.openConnection(), java.lang.Class.newInstance(), java.lang.Class.forName() are some of ther example where factory method design pattern has been used.
+
 ## Usecase : 
 Consider we want to implement a notification service through email, SMS, and push notification. Let’s try to implement this with the help of factory method design pattern. First we will design a UML class diagram for this. 
 
