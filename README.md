@@ -19,13 +19,13 @@ Design patterns differ by their complexity, level of detail and scale of applica
 
 Purpose       | Design Pattern    | Aspect(s) that can vary
 ------------- | -------------     | ---------------------------------
-Creational    |                   | provide object creation mechanisms that increase flexibility and reuse of existing code.
+**Creational    |                   | provide object creation mechanisms that increase flexibility and reuse of existing code.**
 Creational    | Factory Method    | provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 Creational    | Abstract Factory  | lets you produce families of related objects without specifying their concrete classes.
 Creational    | Singleton         | lets you ensure that a class has only one instance, while providing a global access point to this instance. 
 Creational    | Builder           | lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
 Creational    | Prototype         | lets you copy existing objects without making your code dependent on their classes.     
-Structural    |                   | These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient
+**Structural    |                   | These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient**
 Structural    | Adapter | allows objects with incompatible interfaces to collaborate.
 Structural    | Bridge   | lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
 Structural   | Composite  | lets you compose objects into tree structures and then work with these structures as if they were individual objects.
@@ -33,7 +33,7 @@ Structural   | Decorator   | lets you attach new behaviors to objects by placing
 Structural   | Facade   | provides a simplified interface to a library, a framework, or any other complex set of classes.
 Structural | Flyweight   | lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
 Structural   | Proxy   | lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
-Behavioral    |                   | take care of effective communication and the assignment of responsibilities between objects.
+**Behavioral    |                   | take care of effective communication and the assignment of responsibilities between objects.**
 Behavioral    |  Chain of Responsibility | lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
 Behavioral    | Command | turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.
 Behavioral    | Iterator | lets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.).
