@@ -26,7 +26,7 @@ Creational    | Singleton         | lets you ensure that a class has only one in
 Creational    | Builder           | lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
 Creational    | Prototype         | lets you copy existing objects without making your code dependent on their classes.     
 Structural    |                   | These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient
-Adapter       |   | allows objects with incompatible interfaces to collaborate.
+       | Adapter | allows objects with incompatible interfaces to collaborate.
 Bridge       |   | lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
 Composite   |   | lets you compose objects into tree structures and then work with these structures as if they were individual objects.
 Decorator   |   | lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
