@@ -35,88 +35,137 @@ AbstractFactoryPatternDemo, our demo class uses FactoryProducer to get a Abstrac
 **Create Notification interface**
 
 ```
-interface Notification {
-    fun notifyUser()
+interface Shape {
+    fun draw()
 }
 ```
 Note- Above interface could be created as an abstract class as well. 
-```
-abstract class Notification {
-    abstract fun notifyUser()
-}
-```
 
 Create all implementation classes
 
 ```
-SMSNotification.kt
+RoundedRectangle.kt
 ```
 
 ```
-class SMSNotification: Notification {
-    override fun notifyUser() {
-        println("Sending an SMS notification")
+class RoundedRectangle: Shape {
+    override fun draw() {
+        println("Inside RoundedRectangle::draw() method.")
     }
 }
 ```
+```
+RoundedSquare.kt
+```
 
 ```
-EmailNotification.kt
-```
-
-```
-public class EmailNotification: Notification {
-    override fun notifyUser()
-    {
-        println("Sending an e-mail notification");
+class RoundedSquare:Shape {
+    override fun draw() {
+        println("Inside RoundedSquare::draw() method.")
     }
 }
 ```
-
 ```
-PushNotification.kt
+Rectangle.kt
 ```
-
 ```
-public class PushNotification: Notification {
-    override fun notifyUser()
-    {
-        println("Sending a push notification");
+class Rectangle: Shape {
+    override fun draw() {
+        println("Inside Rectangle::draw() method.")
     }
 }
 ```
-Create a factory class NotificationFactory.kt to instantiate concrete class.
+```
+AbstractFactory.kt
+```
 
 ```
-class NotificationFactory {
-    fun createNotification(channel: String?): Notification? {
-            if (channel == null || channel.isEmpty())
-                return null
-
-            return when (channel) {
-                "SMS" -> {
-                    SMSNotification()
-                }
-                "EMAIL" -> {
-                    EmailNotification()
-                }
-                "PUSH" -> {
-                    PushNotification()
-                }
-                else -> null
+abstract class AbstractFactory {
+    abstract fun getShape(shapeType: String?): Shape?
+}
+```
+```
+AbstractFactory.kt
+```
+```
+class ShapeFactory: AbstractFactory() {
+    override fun getShape(shapeType: String?): Shape? {
+        when {
+            shapeType.equals("RECTANGLE") -> {
+                return Rectangle()
             }
+            shapeType.equals("SQUARE") -> {
+                return Square()
+            }
+            else -> return null
         }
+    }
 }
 ```
-
-Now let’s use factory class to create and get an object of concrete class by passing some information. 
-
 ```
-fun main(){
-    NotificationFactory().createNotification("SMS")?.notifyUser()
+RoundedShapeFactory.kt
+```
+```
+class RoundedShapeFactory: AbstractFactory() {
+    override fun getShape(shapeType: String?): Shape? {
+        if (shapeType.equals("RECTANGLE")) {
+            return RoundedRectangle()
+        } else if (shapeType.equals("SQUARE")) {
+            return RoundedSquare()
+        }
+        return null
+    }
 }
 ```
+```
+FactoryProducer.kt
+```
 
 ```
-Output : Sending an SMS notification
+class FactoryProducer {
+    fun getFactory(rounded: Boolean): AbstractFactory {
+        return if (rounded) {
+            RoundedShapeFactory()
+        } else {
+            ShapeFactory()
+        }
+    }
+}
+
+```
+```
+Main.kt
+```
+
+```
+fun main() {
+    //get shape factory
+    val shapeFactory: AbstractFactory = FactoryProducer().getFactory(false)
+    //get an object of Shape Rectangle
+    val shape1 = shapeFactory.getShape("RECTANGLE")
+    //call draw method of Shape Rectangle
+    shape1!!.draw()
+    //get an object of Shape Square
+    val shape2 = shapeFactory.getShape("SQUARE")
+    //call draw method of Shape Square
+    shape2!!.draw()
+    //get shape factory
+    val shapeFactory1: AbstractFactory = FactoryProducer().getFactory(true)
+    //get an object of Shape Rectangle
+    val shape3 = shapeFactory1.getShape("RECTANGLE")
+    //call draw method of Shape Rectangle
+    shape3!!.draw()
+    //get an object of Shape Square
+    val shape4 = shapeFactory1.getShape("SQUARE")
+    //call draw method of Shape Square
+    shape4!!.draw()
+}
+```
+```
+Output:
+
+Inside Rectangle::draw() method.
+Inside Square::draw() method.
+Inside RoundedRectangle::draw() method.
+Inside RoundedSquare::draw() method.
 ```
