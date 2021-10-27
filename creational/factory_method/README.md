@@ -15,7 +15,19 @@ Avoid tight coupling between the creator and the concrete products. | The code m
 Single Responsibility Principle. You can move the product creation code into one place in the program, making the code easier to support.|
  Open/Closed Principle. You can introduce new types of products into the program without breaking existing client code.|
 
-
+## Factory method pattern in Spring Framework
+Spring uses this technique at the root of its Dependency Injection (DI) framework.
+Fundamentally, Spring treats a bean container as a factory that produces beans.
+Thus, Spring defines the BeanFactory interface as an abstraction of a bean container:
+```
+public interface BeanFactory {
+    getBean(Class<T> requiredType);
+    getBean(Class<T> requiredType, Object... args);
+    getBean(String name);
+    // ...
+]
+```
+https://www.baeldung.com/spring-framework-design-patterns#1-application-context
 
 ## Usecase : 
 Consider we want to implement a notification service through email, SMS, and push notification. Let’s try to implement this with the help of factory method design pattern. First we will design a UML class diagram for this. 
