@@ -13,6 +13,6 @@ In Java constructors are not polymorphic, but by allowing subclass to create an 
 
 **Create Notification interface**
 
-`public interface Notification {
+``public interface Notification {
     void notifyUser();
-}`
+}``
